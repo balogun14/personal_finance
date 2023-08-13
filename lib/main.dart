@@ -15,8 +15,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+      ),
       home: MyHomePage(),
-      title: 'Flutter App',
+      title: 'Personal Finance',
     );
   }
 }
@@ -46,7 +49,6 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _userTransaction.add(newTx);
     });
-    print(title);
   }
 
   void _startAddNewTransaction(BuildContext ctx) {
@@ -61,8 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
-        title: Center(child: const Text('Flutter App')),
+        title: Center(child: const Text('Personal Finance')),
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -85,7 +86,6 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       floatingActionButton: FloatingActionButton(
         onPressed: () =>_startAddNewTransaction(context),
-        backgroundColor: Colors.purpleAccent,
         child: Icon(
           Icons.add,
         ),
